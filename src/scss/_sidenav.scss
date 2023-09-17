@@ -1,0 +1,21 @@
+.sidenav {
+  // width: 320px;
+  height: 100vh;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: fixed;
+  transform: translateX(-850px);
+  z-index: 10;
+  transition: transform 0.5s ease;
+
+  &.burger-toggle {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    transform: translateX(0);
+    position: fixed;
+  }
+}

@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 88px;
+  padding: 24px 16px;
+  border-bottom: 1px solid $block-border-divider;
+  width: 100%;
+
+  &__left-block {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+  }
+
+  &__left-burger-btn {
+    display: flex;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    background: url(../img/burger.svg);
+  }
+
+  &__logo-img {
+    display: flex;
+    align-self: center;
+    padding: 0;
+    width: 96.5px;
+    height: 50.8px;
+    background: url(../img/Group.svg);
+  }
+
+  &__right-btns {
+    display: flex;
+    column-gap: 16px;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  &__right-hidden-btns {
+    display: none;
+  }
+
+  &__right-visible-btns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 16px;
+  }
+
+  &__right-repair-btn {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: url(../img/repair.svg);
+    &::before {
+      content: '';
+      width: 2px;
+      height: 32px;
+      border-radius: 1px;
+      background: $divider-gray;
+      position: absolute;
+      top: 4px;
+      left: -22px;
+    }
+  }
+
+  &__right-status-btn {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: url(../img/checkstatus.svg);
+  }
+
+  @media screen and (min-width: $screen-md) {
+    padding: 24px 24px;
+
+    &__left-block {
+      gap: 42px;
+    }
+
+    &__left-burger-btn {
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 2px;
+        height: 32px;
+        border-radius: 1px;
+        background: $divider-gray;
+        position: absolute;
+        top: 4px;
+        left: 60px;
+      }
+    }
+
+    &__right-btns {
+      column-gap: 42px;
+    }
+
+    &__right-hidden-btns {
+      display: flex;
+      column-gap: 16px;
+    }
+
+    &__right-call-btn,
+    &__right-message-btn,
+    &__right-profile-btn {
+      display: flex;
+      padding: 0;
+    }
+
+    &__right-call-btn {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: url(../img/call.svg);
+    }
+
+    &__right-message-btn {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: url(../img/chat.svg);
+    }
+
+    &__right-profile-btn {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: url(../img/profile.svg);
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    display: none;
+  }
+}

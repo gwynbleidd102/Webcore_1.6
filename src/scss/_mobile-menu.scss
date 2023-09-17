@@ -1,0 +1,61 @@
+.mobile-menu {
+  background: $main-white;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+    -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+
+  @media screen and (min-width: $screen-xl) {
+    box-shadow: none;
+  }
+
+  &__header {
+    display: flex;
+    padding: 18.73px 24px 0 24px;
+    column-gap: 78.27px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50.27px;
+
+    @media screen and (min-width: $screen-xl) {
+      padding: 30px 20px 0 20px;
+    }
+  }
+
+  &__left-items {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+  }
+
+  &__back-btn {
+    background: url(../img/close-burger.svg);
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    background: url(../img/Group.svg);
+    width: 97px;
+    height: 51px;
+  }
+
+  &__search-btn {
+    background: url(../img/search.svg);
+    height: 40px;
+    width: 40px;
+    transition: all 0.3s ease;
+  }
+}
+
+.round-btn--hover:hover {
+  filter: drop-shadow(3px 2px 8px #ff3e79);
+}

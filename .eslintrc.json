@@ -3,12 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:import/errors", "plugin:import/warnings"],
   "ignorePatterns": ["node_modules", "dist", "build"],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -20,14 +15,7 @@
     "import/order": [
       2,
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
         "newlines-between": "always"
       }
     ],

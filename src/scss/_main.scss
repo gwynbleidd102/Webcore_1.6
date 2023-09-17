@@ -1,0 +1,94 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $main-gray;
+
+  &__title-block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1120px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 24px 0 0 16px;
+    font-family: 'TT Lakes Bold';
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    color: $black-text;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 40px;
+      background: $cyan-title;
+      border-radius: 0px 6px 6px 0;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      margin-bottom: 32px;
+      padding: 24px 0 0 24px;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      padding: 42px 0 0 32px;
+      margin-bottom: 8.37px;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      padding-left: 34px;
+    }
+  }
+
+  &__title-btns {
+    display: none;
+
+    @media screen and (min-width: 1120px) {
+      padding: 42px 32px 0 0;
+      display: flex;
+      column-gap: 32px;
+    }
+
+    // @media screen and (min-width: 1440px) {
+    //   padding: 42px 32px 0 0;
+    //   display: flex;
+    //   column-gap: 32px;
+    // }
+  }
+
+  &__title-repair-btn,
+  &__title-status-btn {
+    background-color: $main-gray;
+    padding: 0;
+    color: $black-text;
+    font-family: 'TT Lakes Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+
+  &__title-repair-btn {
+    width: 173px;
+    height: 40px;
+    border: none;
+    background: url(../img/repair.svg) no-repeat right center;
+    padding-right: 48px;
+  }
+
+  &__title-status-btn {
+    width: 168px;
+    height: 40px;
+    border: none;
+    background: url(../img/checkstatus.svg) no-repeat right center;
+    padding-right: 49px;
+  }
+}

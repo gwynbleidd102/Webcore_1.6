@@ -1,0 +1,40 @@
+.sidenav__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  padding-left: 24px;
+  position: relative;
+
+  @media screen and (min-width: $screen-xl) {
+    padding-left: 34px;
+  }
+}
+
+.sidenav__links-item {
+  color: $black-text;
+  font-family: 'TT Lakes Medium', serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  transform-origin: center;
+
+  &:last-child {
+    margin-bottom: 32px;
+  }
+
+  &:hover::before {
+    position: absolute;
+    content: '';
+    transform: translate(-24px, -4px);
+    width: 4px;
+    height: 32px;
+    background: $cyan-title;
+    border-radius: 0px 6px 6px 0;
+
+    @media screen and (min-width: $screen-xl) {
+      transform: translate(-34px, -4px);
+    }
+  }
+}

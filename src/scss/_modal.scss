@@ -1,0 +1,170 @@
+.modal-call,
+.modal-feedback {
+  display: flex;
+  position: fixed;
+  z-index: 12;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  transform: translateX(600px);
+  transition: all 0.5s ease;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  row-gap: 40px;
+  padding: 24px 16px;
+  height: 100vh;
+  background-color: $main-white;
+
+  // позиционирование
+
+  @media screen and (min-width: $screen-md) {
+    width: 440px;
+    padding: 40px 32px;
+    border-left: 1px solid $block-border-divider;
+  }
+
+  &--active {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  &__close {
+    background: url(../img/close-burger.svg) no-repeat;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+
+    @media screen and (min-width: $screen-md) {
+      position: absolute;
+      transform: translate(-90px, -3px);
+      z-index: 12;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__form-title {
+    color: $black-text;
+    font-family: 'TT Lakes Bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 40px;
+      flex-shrink: 0;
+      background-color: $cyan-title;
+      border-radius: 0px 6px 6px 0;
+      transform: translate(-16px, -3px);
+
+      @media screen and (min-width: $screen-lg) {
+        transform: translate(-32px, -3px);
+      }
+    }
+  }
+
+  &__form-input {
+    width: 288px;
+    padding: 12px 16px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid $divider-gray;
+    background: $main-white;
+
+    &::placeholder {
+      color: #b5b6bc;
+    }
+
+    &:hover {
+      border: 1px solid $main-pink;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      width: 376px;
+    }
+  }
+
+  &__form-text-area {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid $divider-gray;
+    background: $main-white;
+    min-width: 288px;
+    max-width: 288px;
+    min-height: 118px;
+    max-height: 350px;
+
+    &:hover {
+      border: 1px solid $main-pink;
+    }
+  }
+
+  &__text {
+    color: $dark-grey;
+    font-family: 'TT Lakes Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+
+    span {
+      color: $main-pink;
+      font-family: 'TT Lakes Medium';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+    }
+  }
+
+  &__submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  &__submit-btn {
+    color: $main-white;
+    font-family: 'TT Lakes Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    text-align-last: left;
+    padding-left: 20px;
+    cursor: pointer;
+
+    border: none;
+    width: 136px;
+    height: 32px;
+    border-radius: 16px;
+    background: #ff3e79;
+    position: relative;
+  }
+
+  &__submit-arrow {
+    position: absolute;
+    display: inline-block;
+    background: url(../img/goside.svg) no-repeat;
+    width: 27px;
+    height: 24px;
+    transform: translate(-10px);
+  }
+}

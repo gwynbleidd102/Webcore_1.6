@@ -1,0 +1,238 @@
+.prices {
+  &__subtitle {
+    display: none;
+
+    @media screen and (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+      color: $dark-grey;
+      font-family: 'TT Lakes Regular';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      padding: 31px 0 0 40px;
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    &__subtitle-service {
+      font-size: 14px;
+      font-weight: 400;
+      display: flex;
+      margin: 0;
+      flex: 3;
+    }
+
+    &__subtitle-price {
+      display: flex;
+      flex: 1;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &__subtitle-time {
+      display: flex;
+      flex: 2.2 1 0%;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  &__swiper {
+    padding: 16px 8px;
+
+    @media screen and (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      padding: 24px 34px;
+    }
+  }
+
+  &__swiper-wrapper {
+    @media screen and (min-width: $screen-md) {
+      flex-direction: column;
+      background: $main-white;
+      border-radius: 6px;
+    }
+  }
+
+  &__swiper-slide {
+    padding: 16px;
+    width: 260px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: $main-white;
+    box-sizing: border-box;
+    position: relative;
+
+    @media screen and (min-width: $screen-md) {
+      width: 100%;
+      height: 100%;
+      border-radius: none;
+      background: none;
+
+      &:not(:last-child)::after {
+        content: '';
+        width: calc(100% - 32px);
+        height: 1px;
+        position: absolute;
+        background-color: $divider-gray;
+        transform: translateY(15px);
+      }
+    }
+  }
+
+  &__note {
+    color: $black-text;
+    font-family: 'TT Lakes Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 0 16px;
+    display: block;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $screen-md) {
+      padding: 0 24px;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      padding: 0 34px;
+    }
+  }
+
+  &__offer {
+    color: $black-text;
+    font-family: 'TT Lakes Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    padding: 0 16px;
+    display: block;
+    position: relative;
+    width: 90%;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    &::after {
+      content: '';
+      background: url(../img/more.svg);
+      width: 24px;
+      height: 24px;
+      position: absolute;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      padding: 0 24px;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      padding: 0 34px;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+  height: 100%;
+  position: relative;
+
+  &__item-third {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    flex-direction: row;
+    align-items: center;
+
+    &__item-first {
+      display: flex;
+      flex: 3;
+    }
+
+    &__item-second {
+      display: flex;
+      flex: 1;
+    }
+
+    &__item-third {
+      flex: 2 1 0%;
+    }
+  }
+
+  &__title {
+    color: $dark-grey;
+    font-family: 'TT Lakes Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    opacity: 0.7218;
+    margin-bottom: 4px;
+
+    @media screen and (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &__description {
+    color: $black-text;
+    font-family: 'TT Lakes Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+
+    @media screen and (min-width: $screen-md) {
+      display: flex;
+    }
+  }
+
+  &__order-btn {
+    width: 119px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #ff3e79;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 0.3s linear;
+  }
+
+  &__order-text {
+    color: $main-white;
+    text-align: right;
+    font-family: 'TT Lakes Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+  }
+
+  &__order-arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/goside.svg);
+  }
+}

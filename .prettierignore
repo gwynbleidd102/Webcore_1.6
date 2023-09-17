@@ -1,3 +1,5 @@
 node_modules/**
 build/**
 dist/**
+index.html
+# src/js/modules/swiper-script.js

@@ -1,0 +1,176 @@
+.brands {
+  &__swiper {
+    padding: 16px;
+
+    @media screen and (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      padding: 24px 34px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 24px;
+      height: 81px;
+      top: 13px;
+      right: 0;
+      background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0) 100%);
+      z-index: 2;
+
+      @media screen and (min-width: $screen-md) {
+        display: none;
+      }
+    }
+  }
+
+  &__swiper-wrapper {
+    min-width: 320px;
+    width: auto;
+
+    @media screen and (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px 24px;
+      max-height: 140px;
+      width: auto;
+      transition: max-height 0.5s ease;
+
+      &--all-slides {
+        max-height: 320px;
+      }
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      grid-template-columns: repeat(4, 1fr);
+
+      &--all-slides {
+        max-height: 270px;
+      }
+    }
+  }
+
+  &__swiper-slide {
+    width: 240px;
+    height: 72px;
+    text-align: center;
+    background: $main-white;
+    border-radius: 6px;
+    border: 1px solid $divider-gray;
+
+    @media screen and (min-width: $screen-md) {
+      width: auto;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      width: 240px;
+    }
+  }
+}
+
+.swiper-slide__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+/* slide logos */
+
+.swiper-slide__img--lenovo {
+  width: 108px;
+  height: 32px;
+}
+
+.swiper-slide__img--samsung {
+  width: 116px;
+  height: 38.5px;
+}
+
+.swiper-slide__img--apple {
+  width: 42px;
+  height: 42px;
+  transform: translateY(-4px);
+}
+
+.swiper-slide__img--viewsonic {
+  width: 128px;
+  height: 21px;
+}
+
+.swiper-slide__img--bosch {
+  width: 128px;
+  height: 28.6px;
+}
+
+.swiper-slide__img--hp {
+  width: 42px;
+  height: 42px;
+}
+
+.swiper-slide__img--acer {
+  width: 94px;
+  height: 24px;
+}
+
+.swiper-slide__img--sony {
+  width: 128px;
+  height: 25.6px;
+}
+
+/*  */
+
+.go-btn {
+  background: url(../img/go.svg) no-repeat;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1) rotate(90deg);
+  }
+
+  &:focus {
+    border-radius: 50%;
+  }
+}
+
+.expand {
+  display: none;
+
+  @media screen and (min-width: $screen-md) {
+    display: flex;
+    padding-left: 24px;
+    padding-top: 24px;
+
+    &-btn {
+      color: $black-text;
+      font-family: 'TT Lakes Regular';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      background: $main-gray;
+      display: flex;
+      column-gap: 9px;
+      margin-bottom: 32px;
+    }
+
+    &-btn-text {
+      transition: all 0.3s ease;
+
+      &:hover {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-xl) {
+  &__expand {
+    padding-left: 34px;
+  }
+}

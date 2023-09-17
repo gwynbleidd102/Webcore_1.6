@@ -1,0 +1,118 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (min-width: $screen-md) {
+    flex-direction: row;
+  }
+
+  &__info {
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0 16px;
+
+    @media screen and (min-width: $screen-md) {
+      padding: 0 48px 0 24px;
+      margin: 0;
+      width: 50%;
+      // flex: 0.7;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      padding: 0 36px 0 34px;
+    }
+  }
+
+  &__info-text {
+    margin: 0;
+    margin-bottom: 16px;
+    color: $black-text;
+    font-family: 'TT Lakes Regular', serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: 0.2px;
+    box-sizing: content-box;
+    max-height: 90px;
+    overflow: hidden;
+    white-space: pre-line;
+    transition: max-height 0.3s ease;
+
+    @media screen and (min-width: $screen-md) {
+      line-height: 20px;
+      max-height: 140px;
+      max-width: 490px;
+    }
+
+    &--readmore {
+      max-height: 320px;
+    }
+  }
+
+  &__info-expand-btn {
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    border: none;
+    background: $main-gray;
+    color: $black-text;
+    font-family: 'TT Lakes Regular';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    display: flex;
+    column-gap: 8px;
+
+    @media screen and (min-width: $screen-md) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__info-expand-btn-text {
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-md) {
+      border-radius: 6px;
+      height: auto;
+      width: 100%;
+
+      &-wrapper {
+        // flex: 1;
+        width: 50%;
+      }
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      max-width: 532px;
+
+      &-wrapper {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.expand-arrow {
+  background-image: url(../img/expand.svg);
+  width: 24px;
+  height: 24px;
+  transition: transform 0.5s ease;
+
+  &--rotate {
+    transform: rotate(180deg);
+  }
+}

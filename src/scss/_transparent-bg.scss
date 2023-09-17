@@ -1,0 +1,18 @@
+.transparent-bg {
+  opacity: 0;
+  transition: 0.5s ease;
+
+  @media screen and (min-width: $screen-xl) {
+    // display: none;
+  }
+
+  &--visible {
+    transition: 0.5s ease;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.9605;
+    background: $main-white;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,95 @@
+.tech {
+  &__swiper {
+    padding: 16px;
+
+    @media screen and (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      padding: 24px 34px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 24px;
+      height: 166px;
+      top: 13px;
+      right: 0;
+      background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0) 100%);
+      z-index: 2;
+
+      @media screen and (min-width: $screen-md) {
+        display: none;
+      }
+    }
+  }
+
+  &__swiper-wrapper {
+    min-width: 320px;
+    width: auto;
+
+    @media screen and (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px 24px;
+      width: auto;
+      max-height: 136px;
+      transition: max-height 0.5s ease;
+    }
+
+    &--all-slides {
+      max-height: 490px;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      &--all-slides {
+        max-height: 488px;
+      }
+    }
+  }
+
+  &__swiper-slide {
+    width: 240px;
+    height: 160px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+    background: $main-white;
+    padding: 16px;
+
+    @media screen and (min-width: $screen-md) {
+      width: auto;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      width: 240px;
+    }
+  }
+
+  &__swiper-slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__slide-title {
+    color: $black-text;
+    font-family: 'TT Lakes Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    margin: 0;
+  }
+
+  &__go-btn {
+    align-self: flex-end;
+  }
+}

@@ -1,17 +1,20 @@
-$bgColor: #24292e;
-$text: #fff;
+@import './fonts.css';
+@import './_vars';
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
+@import './base-styles';
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
-}
+@import './_sidenav';
+@import './_mobile-menu';
+@import './_sidenav-links';
+@import './_mobile-menu__footer';
+@import './_transparent-bg';
+@import './_modal';
+@import './_header';
+@import './_main';
+@import './_navigation';
+@import './_about';
+@import '../../node_modules/swiper/swiper-bundle.css';
+@import './_brands';
+@import './_tech';
+@import './_prices';
+@import './_footer';
