@@ -13,7 +13,7 @@ function showAll(wrapper, btn, btnText, expadndingClass) {
   rotateArrow(btn)
 
   if (wrapper.classList.contains(expadndingClass)) {
-    btnText.textContent = 'Свернуть'
+    btnText.textContent = 'Скрыть'
   } else {
     if (wrapper === aboutText) {
       btnText.textContent = 'Читать далее'
