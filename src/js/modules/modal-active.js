@@ -7,8 +7,9 @@ const modalCall = document.querySelector('.modal-call')
 const transparentBg = modalCall.querySelector('.transparent-bg')
 const modalFeedback = document.querySelector('.modal-feedback')
 const transparentBg2 = modalFeedback.querySelector('.transparent-bg')
-
 const modalCallBtns = document.querySelectorAll('.modal-call-toggle')
+const modalFeedbackBtns = document.querySelectorAll('.modal-feedback-toggle')
+
 modalCallBtns.forEach(function (element) {
   element.addEventListener('click', function () {
     closeModal() // Закрыть активную модалку, если она есть
@@ -19,14 +20,13 @@ modalCallBtns.forEach(function (element) {
   })
 })
 
-const modalFeedbackBtns = document.querySelectorAll('.modal-feedback-toggle')
 modalFeedbackBtns.forEach(function (element) {
   element.addEventListener('click', function () {
-    closeModal() // Закрыть активную модалку, если она есть
+    closeModal()
     modalFeedback.classList.add('modal--active')
     body.classList.add('no-scroll')
     transparentBg2.classList.add('transparent-bg--visible')
-    activeModal = modalFeedback // Устанавливаем активной текущую модалку
+    activeModal = modalFeedback
   })
 })
 
@@ -42,10 +42,9 @@ function closeModal() {
     activeModal.classList.remove('modal--active')
   }
   body.classList.remove('no-scroll')
-  // transparentBg.classList.remove('transparent-bg--visible')
   transparentBg.classList.remove('transparent-bg--visible')
   transparentBg2.classList.remove('transparent-bg--visible')
-  activeModal = null // Очищаем активную модалку
+  activeModal = null
 }
 
 ;[transparentBg, transparentBg2].forEach((bgElement) => {
@@ -53,11 +52,3 @@ function closeModal() {
     closeModal()
   })
 })
-
-// transparentBg.addEventListener('click', () => {
-//   closeModal()
-// })
-
-// transparentBg2.addEventListener('click', () => {
-//   closeModal()
-// })

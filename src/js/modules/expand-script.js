@@ -1,62 +1,41 @@
-// поворот стрелки
+const aboutText = document.querySelector('.about__info-text')
+const readmoreBtn = document.querySelector('.about__info-expand-btn')
+const readmoreBtnText = readmoreBtn.querySelector('.about__info-expand-btn-text')
+const brandsSwiperWrapper = document.querySelector('.brands__swiper-wrapper')
+const expandBrands = document.querySelector('.expand-brands')
+const expandBrandsText = expandBrands.querySelector('.expand-btn-text')
+const techSwiperWrapper = document.querySelector('.tech__swiper-wrapper')
+const expandTech = document.querySelector('.expand-tech')
+const expandTechText = expandTech.querySelector('.expand-btn-text')
+
+function showAll(wrapper, btn, btnText, expadndingClass) {
+  wrapper.classList.toggle(expadndingClass)
+  rotateArrow(btn)
+
+  if (wrapper.classList.contains(expadndingClass)) {
+    btnText.textContent = 'Свернуть'
+  } else {
+    if (wrapper === aboutText) {
+      btnText.textContent = 'Читать далее'
+    } else {
+      btnText.textContent = 'Показать всё'
+    }
+  }
+}
+
 function rotateArrow(button) {
   const arrow = button.querySelector('.expand-arrow')
   arrow.classList.toggle('expand-arrow--rotate')
 }
 
-// фукнция для кнопки "читать далее"
-const aboutText = document.querySelector('.about__info-text')
-const readmoreBtn = document.getElementById('about__info-expand-btn')
-const readmoreBtnText = readmoreBtn.querySelector('.about__info-expand-btn-text')
-let isExpandedAbout = false
-
-readmoreBtn.addEventListener('click', () => {
-  aboutText.classList.toggle('about__info-text--readmore')
-  rotateArrow(readmoreBtn)
-
-  isExpandedAbout = !isExpandedAbout
-
-  if (isExpandedAbout) {
-    readmoreBtnText.textContent = 'Свернуть'
-  } else {
-    readmoreBtnText.textContent = 'Читать далее'
-  }
-})
-
-// функция для кнопки "показать всё" у слайдеров
-
-const brandsSwiperWrapper = document.querySelector('.brands__swiper-wrapper')
-const techSwiperWrapper = document.querySelector('.tech__swiper-wrapper')
-const expandBrands = document.getElementById('expand-brands')
-const expandTech = document.getElementById('expand-tech')
-const expandBrandsText = expandBrands.querySelector('.expand-btn-text')
-const expandTechText = expandTech.querySelector('.expand-btn-text')
-
-let isExpandedBrands = false // Отдельная переменная для кнопки expandBrands
-let isExpandedTech = false
-
 expandBrands.addEventListener('click', () => {
-  brandsSwiperWrapper.classList.toggle('brands__swiper-wrapper--all-slides')
-  rotateArrow(expandBrands)
-
-  isExpandedBrands = !isExpandedBrands
-
-  if (isExpandedBrands) {
-    expandBrandsText.textContent = 'Скрыть'
-  } else {
-    expandBrandsText.textContent = 'Показать всё'
-  }
+  showAll(brandsSwiperWrapper, expandBrands, expandBrandsText, 'brands__swiper-wrapper--all-slides')
 })
 
 expandTech.addEventListener('click', () => {
-  techSwiperWrapper.classList.toggle('tech__swiper-wrapper--all-slides')
-  rotateArrow(expandTech)
+  showAll(techSwiperWrapper, expandTech, expandTechText, 'tech__swiper-wrapper--all-slides')
+})
 
-  isExpandedTech = !isExpandedTech
-
-  if (isExpandedTech) {
-    expandTechText.textContent = 'Скрыть'
-  } else {
-    expandTechText.textContent = 'Показать всё'
-  }
+readmoreBtn.addEventListener('click', () => {
+  showAll(aboutText, readmoreBtn, readmoreBtnText, 'about__info-text--readmore')
 })
